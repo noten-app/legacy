@@ -1,0 +1,92 @@
+/* Import the font "Dosis" that's used */
+
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@800&display=swap');
+
+/* Theme switch */
+
+#themeToggleButton {
+    color: var(--font-color);
+    background: var(--color-primary);
+    padding: 2vh 2vw;
+    border-radius: 1vh;
+}
+
+#themeButton {
+    position: fixed;
+    top: 2vh;
+    right: 2vh;
+}
+
+
+/* text */
+
+span {
+    text-align: center;
+    margin: auto;
+    cursor: pointer;
+}
+
+
+/* everything on the page */
+
+* {
+    box-sizing: border-box;
+    font-size: 2.3vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body,
+html {
+    background-color: #282C36;
+    font-family: Dosis;
+    transition: 1s;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    margin: 0;
+}
+
+#centering_container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* The form */
+
+.left-right_divider {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50%;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas: "left right";
+}
+
+.left {
+    grid-area: left;
+}
+
+.right {
+    grid-area: right;
+}
+
+.flex_center_parent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex_center_parent legend {
+    margin: auto;
+    padding: 0 0.5rem;
+}
+
+.flex_center_parent fieldset {
+    border-radius: 0.5rem;
+}
