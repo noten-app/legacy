@@ -102,6 +102,7 @@ html {
 .flex_center_parent legend {
     margin: auto;
     padding: 0 0.5rem;
+    color: #ffffff;
 }
 
 .flex_center_parent fieldset {
