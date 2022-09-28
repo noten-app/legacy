@@ -1,6 +1,7 @@
 /* Import the font "Dosis" that's used */
 
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap');
 
 /* Theme switch */
 
@@ -46,6 +47,7 @@ html {
     top: 0;
     left: 0;
     margin: 0;
+    font-size: 100%;
 }
 
 #centering_container {
@@ -59,21 +61,36 @@ html {
 
 /* The form */
 
+#center_parent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    max-width: 95vw;
+}
+
 .left-right_divider {
     display: grid;
     grid-template-columns: 50% 50%;
     grid-template-rows: 50%;
-    gap: 0px 0px;
+    gap: 0px 0rem;
     grid-auto-flow: row;
     grid-template-areas: "left right";
+    width: min-content;
+    margin: auto;
+    padding: 1rem 2.5rem 2rem 2.5rem;
+    background-color: #383C46;
+    border-radius: 1rem;
 }
 
 .left {
     grid-area: left;
+    margin: 1rem;
 }
 
 .right {
     grid-area: right;
+    margin: 1rem;
 }
 
 .flex_center_parent {
@@ -89,4 +106,32 @@ html {
 
 .flex_center_parent fieldset {
     border-radius: 0.5rem;
+    border: #888888 1px solid;
+    background-color: #282C36;
+}
+
+input {
+    width: 400px;
+    padding: 0.25rem;
+    margin: 0.25rem;
+    border-radius: 0.5rem;
+    border: 0;
+    padding: 0.5rem
+}
+
+input[type="text"],
+input[type="password"] {
+    font-family: Ubuntu;
+}
+
+input[type="submit"] {
+    font-family: Dosis;
+    text-align: center;
+    color: #ffffff;
+    cursor: pointer;
+    background-color: #55BA9D;
+}
+
+input[type="submit"]:hover {
+    background-color: #45AA8D;
 }
