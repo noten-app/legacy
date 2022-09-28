@@ -8,9 +8,8 @@
     }
 ?>
 
-    <!DOCTYPE html>
-    <html lang="de">
-
+<!DOCTYPE html>
+<html lang="de">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,7 +17,6 @@
         <title>NotenApp - Login</title>
         <link rel="stylesheet" href="style.css">
     </head>
-
     <body>
         <div class="status_container status"></div>
         <div id="center_parent">
@@ -59,5 +57,4 @@
         <script src="script.js"></script>
         <script src="https://cdn.jsdelivr.net/gh/cuzimbisonratte/status_box@v1.0.0/statusbox.js"></script>
     </body>
-
-    </html>
+</html>
