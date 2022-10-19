@@ -34,21 +34,21 @@
 
     // Check if both passwords are the same
     if ($password != $password_repeat) {
-        header("Location: register.html?c=21");
+        header("Location: .?c=21");
         exit;
     } 
 
     // Check if email is a valid email
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        header("Location: register.html?c=01");
+        header("Location: .?c=01");
         exit;
     } 
 
-    // Check if displayname is valid
+    // Check if username is valid
     // Only a-z | A-Z | 0-9 | _
     // Length: 4-12
-    if (!preg_match("/^[a-zA-Z0-9_]{4,12}$/", $displayname)) {
-        header("Location: register.html?c=02");
+    if (!preg_match("/^[a-zA-Z0-9_]{4,16}$/", $username)) {
+        header("Location: .?c=02");
         exit;
     } 
 
@@ -56,13 +56,13 @@
     // Length: 8-255
     // Contains at least one number, at least one uppercase, at least one lowercase letter and at least one special character
     if (!preg_match("/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,255}$/", $password)) {
-        header("Location: register.html?c=04");
+        header("Location: .?c=04");
         exit;
     } 
     // Conect to database
     $con = mysqli_connect($db_host, $db_user, $db_pass, 'notenapp');
     if (mysqli_connect_errno()) {
-        header("Location: register.html?c=98");
+        header("Location: .?c=98");
         exit;
     } 
 
@@ -72,7 +72,7 @@
     $stmt->execute();
     $result = $stmt->get_result();
     if ($result->num_rows > 0) {
-        header("Location: register.html?c=11");
+        header("Location: .?c=11");
         exit;
     } 
 
@@ -82,7 +82,7 @@
     $stmt->execute();
     $result = $stmt->get_result();
     if ($result->num_rows > 2) {
-        header("Location: register.html?c=12");
+        header("Location: .?c=12");
         exit;
     } 
 
@@ -118,7 +118,7 @@
                 $con->close();
 
                 // Redirect to login page
-                header("Location: login.html?c=13"); 
+                header("Location: .?c=13"); 
             }
         }
     }

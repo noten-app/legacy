@@ -18,10 +18,10 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <div class="status_container status"></div>
+        <div id="status_container"></div>
         <div id="center_parent">
             <div class="left-right_divider">
-                <div class="left flex_center_parent">
+                <div id="login_form" class="left flex_center_parent">
                     <fieldset>
                         <legend>
                             <div id="login_title">
@@ -36,7 +36,7 @@
                     </fieldset>
 
                 </div>
-                <div class="right flex_center_parent">
+                <div id="register_form" class="right flex_center_parent">
                     <fieldset>
                         <legend>
                             <div id="register_title">
