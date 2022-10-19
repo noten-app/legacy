@@ -99,3 +99,49 @@ html {
 .plus i {
     font-size: 5vh;
 }
+
+
+/* 
+
+*/
+
+.mainbody {
+    width: 100vw;
+    min-height: 90vh;
+}
+
+.fachliste {
+    padding-top: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.fach-kachel {
+    display: grid;
+    grid-template-columns: 50%;
+    grid-template-rows: min-content 5px auto;
+    gap: 0px 0px;
+    grid-template-areas: "fach_name" "fach_farbe" "fach_info";
+    padding: 2rem;
+    color: #fff;
+    background-color: #181C26;
+    width: fit-content;
+    border-radius: 1.25rem;
+    cursor: pointer;
+    margin: 0.5rem;
+}
+
+.fach_name {
+    grid-area: fach_name;
+}
+
+.fach_farbe {
+    grid-area: fach_farbe;
+}
+
+.fach_info {
+    grid-area: fach_info;
+    white-space: nowrap;
+}
