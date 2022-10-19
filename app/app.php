@@ -1,3 +1,13 @@
+<?php 
+    // Start the session, to get the data
+	session_start();
+	// If the user is logged in redirect to the app page
+    if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
+        header('Location: ./account/');
+        exit;
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="de">
 
@@ -16,7 +26,7 @@
 <body>
     <nav class="topleiste" id="topleiste">
         <div class="logo" id="top_leiste_icon-name"> <img src="../src/img/logo.png" alt="NotenApp Logo" /> NotenApp</div>
-        <div class="name"></div>
+        <div class="name"><?=$_SESSION['username']?></div>
         <div class="plus"><i class="fa-solid fa-plus"></i></div>
     </nav>
     <div class="mainbody" id="mainbody">
