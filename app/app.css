@@ -90,6 +90,7 @@ html {
     grid-area: name;
     background-color: #2b4696;
     border-bottom-right-radius: 5vh;
+    cursor: pointer;
 }
 
 .plus {

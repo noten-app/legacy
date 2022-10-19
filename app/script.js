@@ -8,3 +8,17 @@ function checkResize() {
 window.addEventListener('orientationchange', (event) => { checkResize() });
 window.addEventListener('resize', (event) => { checkResize() });
 checkResize();
+
+const topleiste_name = document.getElementById("topleiste_name");
+var username = "";
+topleiste_name.addEventListener("mouseenter", (e) => {
+    if (username.length == 0) {
+        username = topleiste_name.innerText;
+    }
+    topleiste_name.innerText = "Ausloggen";
+    topleiste_name.style.backgroundColor = "#2B56a6"
+});
+topleiste_name.addEventListener("mouseleave", (e) => {
+    topleiste_name.innerText = username;
+    topleiste_name.style.backgroundColor = "#2b4696";
+});

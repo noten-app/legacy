@@ -26,7 +26,7 @@
 <body>
     <nav class="topleiste" id="topleiste">
         <div class="logo" id="top_leiste_icon-name"> <img src="../src/img/logo.png" alt="NotenApp Logo" /> NotenApp</div>
-        <div class="name"><?=$_SESSION['username']?></div>
+        <div id="topleiste_name" class="name" onclick="location.assign('./account/logout.php')"><?=$_SESSION['displayname']?></div>
         <div class="plus"><i class="fa-solid fa-plus"></i></div>
     </nav>
     <div class="mainbody" id="mainbody">
