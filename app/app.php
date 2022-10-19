@@ -7,15 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NotenApp - Fächer</title>
     <link rel="stylesheet" href="app.css">
-    <link rel="icon" type="image/x-icon" href="/src/img/favicon.ico" />
-    <link rel="apple-touch-icon" href="/src/img/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="../src/img/favicon.ico" />
+    <link rel="apple-touch-icon" href="../src/img/favicon.ico" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.2.0/css/all.css">
     <link rel="manifest" href="/manifest.json">
 </head>
 
 <body>
     <nav class="topleiste" id="topleiste">
-        <div class="logo" id="top_leiste_icon-name"> <img src="/src/img/logo.png" alt="NotenApp Logo" /> NotenApp</div>
+        <div class="logo" id="top_leiste_icon-name"> <img src="../src/img/logo.png" alt="NotenApp Logo" /> NotenApp</div>
         <div class="name"></div>
         <div class="plus"><i class="fa-solid fa-plus"></i></div>
     </nav>
