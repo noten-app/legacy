@@ -6,4 +6,5 @@ function checkResize() {
     }
 }
 window.addEventListener('orientationchange', (event) => { checkResize() });
+window.addEventListener('resize', (event) => { checkResize() });
 checkResize();
