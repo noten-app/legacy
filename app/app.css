@@ -1,0 +1,101 @@
+/* Import the font "Dosis" that's used */
+
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@800&display=swap');
+
+/* Theme switch */
+
+#themeToggleButton {
+    color: var(--font-color);
+    background: var(--color-primary);
+    padding: 2vh 2vw;
+    border-radius: 1vh;
+}
+
+#themeButton {
+    position: fixed;
+    top: 2vh;
+    right: 2vh;
+}
+
+
+/* text */
+
+span {
+    text-align: center;
+    margin: auto;
+    cursor: pointer;
+}
+
+
+/* everything on the page */
+
+* {
+    box-sizing: border-box;
+    font-size: 2.3vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: 0.5s;
+}
+
+body,
+html {
+    background-color: #282C36;
+    font-family: Dosis;
+    transition: 1s;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    margin: 0;
+    font-size: 100%;
+}
+
+#topleiste {
+    min-height: 7vh;
+    max-height: 10vh;
+    width: 100%;
+    top: 0;
+    color: #ffffff;
+    display: grid;
+    grid-template-columns: min-content auto 7%;
+    grid-template-rows: auto;
+    gap: 0px 0px;
+    grid-template-areas: "logo name plus";
+    transition: 0s !important;
+}
+
+#topleiste * {
+    transition: 0s !important;
+}
+
+#topleiste div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2vh;
+    font-size: 3vh;
+}
+
+.logo {
+    grid-area: logo;
+    background-color: #424242;
+}
+
+.logo img {
+    width: 5vh;
+    margin-right: 1.5vh;
+}
+
+.name {
+    grid-area: name;
+    background-color: #2b4696;
+    border-bottom-right-radius: 5vh;
+}
+
+.plus {
+    grid-area: plus;
+}
+
+.plus i {
+    font-size: 5vh;
+}
