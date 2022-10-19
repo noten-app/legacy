@@ -1,0 +1,11 @@
+{
+    "name": "NotenApp",
+    "short_name": "NotenApp",
+    "start_url": "/app/app.html",
+    "display": "standalone",
+    "icons": [{
+        "src": "/src/img/logo.png",
+        "sizes": "512x512",
+        "type": "image/png"
+    }]
+}
