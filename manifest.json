@@ -1,10 +1,10 @@
 {
     "name": "NotenApp",
     "short_name": "NotenApp",
-    "start_url": "/app/app.php",
+    "start_url": "./app/app.php",
     "display": "standalone",
     "icons": [{
-        "src": "/src/img/logo.png",
+        "src": "./src/img/logo.png",
         "sizes": "512x512",
         "type": "image/png"
     }]

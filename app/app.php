@@ -29,7 +29,7 @@
     <link rel="icon" type="image/x-icon" href="../src/img/favicon.ico" />
     <link rel="apple-touch-icon" href="../src/img/favicon.ico" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.2.0/css/all.css">
-    <link rel="manifest" href="/manifest.json">
+    <link rel="manifest" href="../manifest.json">
 </head>
 
 <body>
