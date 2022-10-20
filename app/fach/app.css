@@ -109,4 +109,54 @@ html {
 .mainbody {
     width: 100vw;
     min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+table {
+    color: #ffffff;
+    border-radius: 1rem;
+    border-collapse: collapse;
+    width: 100%;
+    margin: 5rem;
+}
+
+thead {
+    text-align: left;
+}
+
+tr td {
+    padding-right: 3.5rem;
+}
+
+th {
+    padding: 0.5vh;
+}
+
+td {
+    padding: 1rem 0.4rem;
+    border-width: 0.2rem 0;
+    border-color: #ffffff;
+    border-style: solid;
+}
+
+td button {
+    font-family: Dosis;
+    background-color: #2b4696;
+    border: 0;
+    border-radius: 1rem;
+    padding: 0.5rem;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+tbody tr td:last-child {
+    width: min-content;
+    padding: 0;
+}
+
+tbody tr:last-child {
+    background-color: #2b4696;
+    border-bottom: hidden;
 }

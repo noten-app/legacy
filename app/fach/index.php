@@ -50,7 +50,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NotenApp - Fächer</title>
+    <title>NotenApp - <?=$name?></title>
     <link rel="stylesheet" href="app.css">
     <link rel="icon" type="image/x-icon" href="../../src/img/favicon.ico" />
     <link rel="apple-touch-icon" href="../../src/img/favicon.ico" />
@@ -65,6 +65,39 @@
         <div class="plus"><i class="fa-solid fa-plus"></i></div>
     </nav>
     <div class="mainbody" id="mainbody">
+        <table>
+            <thead>
+                <tr>
+                    <th>Note</th>
+                    <th>Datum</th>
+                    <th>Typ</th>
+                    <th>Notiz</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1 - 2</td>
+                    <td>11.03.2022</td>
+                    <td>Klassenarbeit</td>
+                    <td>KA 1</td>
+                    <td><button>BEARBEITEN</button></td>
+                </tr>
+                <tr>
+                    <td>3-</td>
+                    <td>11.03.2022</td>
+                    <td>Mündlich</td>
+                    <td>KA 1</td>
+                    <td><button>BEARBEITEN</button></td>
+                </tr>
+                <tr>
+                    <td id="average-grade">2 - 3</td>
+                    <td></td>
+                    <td>4 Klassenarbeit | 2 Mündlich | 2 Sonstige</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </body>
