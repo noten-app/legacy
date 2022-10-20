@@ -34,6 +34,13 @@
     } else {
         exit("ERROR1");
     }
+
+    // Text color check
+    if(hexdec(substr($color,0,2))+hexdec(substr($color,2,2))+hexdec(substr($color,4,2))> 381){
+        $textcolor = "#000000";
+    } else {
+        $textcolor = "#fffff";
+    }
 ?>
 
 <!DOCTYPE html>
@@ -54,7 +61,7 @@
 <body>
     <nav class="topleiste" id="topleiste">
         <div class="logo" id="top_leiste_icon-name" onclick="location.assign('../app.php')"><i class="fa-solid fa-house"></i></div>
-        <div id="topleiste_name" class="name" style="background-color: #<?=$color?>;"><?=$name?></div>
+        <div id="topleiste_name" class="name" style="background-color: #<?=$color?>; color: <?=$textcolor?>;"><?=$name?></div>
         <div class="plus"><i class="fa-solid fa-plus"></i></div>
     </nav>
     <div class="mainbody" id="mainbody">
