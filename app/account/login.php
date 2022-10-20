@@ -29,11 +29,11 @@
     }
 
     // Get id, salt and password hash from database
-    if ($stmt = $con->prepare("SELECT id, salt, password, email, account_version FROM accounts WHERE username = ?")) {
+    if ($stmt = $con->prepare("SELECT id, displayname, salt, password, email, account_version FROM accounts WHERE username = ?")) {
         $stmt->bind_param('s', $username);
         $stmt->execute();
         $stmt->store_result();
-        $stmt->bind_result($id, $salt, $password_hash, $email, $account_version);
+        $stmt->bind_result($id, $displayname, $salt, $password_hash, $email, $account_version);
         $stmt->fetch();
 
         // Add salt and password and check if right

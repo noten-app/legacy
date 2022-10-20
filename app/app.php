@@ -6,6 +6,15 @@
         header('Location: ./account/');
         exit;
     }
+
+    // Variables
+    require('../config.php');
+
+    // Conect to database
+    $con = mysqli_connect($db_host, $db_user, $db_pass, 'notenapp');
+    if (mysqli_connect_errno()) {
+        header("Location: ./account/index.php?c=98");
+    }
 ?>
 
 <!DOCTYPE html>
@@ -31,88 +40,9 @@
     </nav>
     <div class="mainbody" id="mainbody">
         <div class="fachliste" id="fachliste">
-            <div class="fach-kachel">
-                <div class="fach_name">Englisch</div>
-                <div class="fach_farbe" style="background-color: #cccc00;"></div>
-                <div class="fach_info">Note: 1,25</div>
-            </div>
-            <div class="fach-kachel">
-                <div class="fach_name">Latein</div>
-                <div class="fach_farbe" style="background-color: #aa0000;"></div>
-                <div class="fach_info">Note: 2,75</div>
-            </div>
-            <div class="fach-kachel">
-                <div class="fach_name">Mathematik</div>
-                <div class="fach_farbe" style="background-color: #fff;"></div>
-                <div class="fach_info">Note: 1,00</div>
-            </div>
-            <div class="fach-kachel">
-                <div class="fach_name">Geographie</div>
-                <div class="fach_farbe" style="background-color: #884400;"></div>
-                <div class="fach_info">Note: 2,50</div>
-            </div>
-            <div class="fach-kachel">
-                <div class="fach_name">Deutsch</div>
-                <div class="fach_farbe" style="background-color: #0000aa;"></div>
-                <div class="fach_info">Note: 3,25</div>
-            </div>
-            <div class="fach-kachel">
-                <div class="fach_name">Biologie</div>
-                <div class="fach_farbe" style="background-color: #008800;"></div>
-                <div class="fach_info">Note: 2,75</div>
-            </div>
-            <div class="fach-kachel">
-                <div class="fach_name">Chemie</div>
-                <div class="fach_farbe" style="background-color: #bb00bb;"></div>
-                <div class="fach_info">Note: 2,00</div>
-            </div>
-            <div class="fach-kachel">
-                <div class="fach_name">Wirtschaft</div>
-                <div class="fach_farbe" style="background-color: #888800;"></div>
-                <div class="fach_info">Note: 2,00</div>
-            </div>
-            <div class="fach-kachel">
-                <div class="fach_name">Politik</div>
-                <div class="fach_farbe" style="background-color: #00bbbb;"></div>
-                <div class="fach_info">Note: 2,00</div>
-            </div>
-            <div class="fach-kachel">
-                <div class="fach_name">Technik</div>
-                <div class="fach_farbe" style="background-color: #dd8800;"></div>
-                <div class="fach_info">Note: 1,75</div>
-            </div>
-            <div class="fach-kachel">
-                <div class="fach_name">Informatik</div>
-                <div class="fach_farbe" style="background-color: #fc480b;"></div>
-                <div class="fach_info">Note: 1,00</div>
-            </div>
-            <div class="fach-kachel">
-                <div class="fach_name">Geschichte</div>
-                <div class="fach_farbe" style="background-color: #934014;"></div>
-                <div class="fach_info">Note: 3,00</div>
-            </div>
-            <div class="fach-kachel">
-                <div class="fach_name">Kunst</div>
-                <div class="fach_farbe" style="background-color: #888888;"></div>
-                <div class="fach_info">Note: 3,00</div>
-            </div>
-            <div class="fach-kachel">
-                <div class="fach_name">Physik</div>
-                <div class="fach_farbe" style="background-color: #fb0100;"></div>
-                <div class="fach_info">Note: 1,75</div>
-            </div>
-            <div class="fach-kachel">
-                <div class="fach_name">Sport</div>
-                <div class="fach_farbe" style="background-color: #444444;"></div>
-                <div class="fach_info">Note: 3,75</div>
-            </div>
-            <div class="fach-kachel">
-                <div class="fach_name">Religion</div>
-                <div class="fach_farbe" style="background-color: #78fc5c;"></div>
-                <div class="fach_info">Note: 1,75</div>
-            </div>
         </div>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="./script.js"></script>
 </body>
 
