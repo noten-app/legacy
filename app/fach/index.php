@@ -31,6 +31,7 @@
             $last_used = "";
             exit("ERROR2");
         }
+        $stmt->close();
     } else {
         exit("ERROR1");
     }
@@ -40,6 +41,30 @@
         $textcolor = "#000000";
     } else {
         $textcolor = "#fffff";
+    }
+
+    // Get grades
+    $grades = array(); 
+    if ($stmt = $con->prepare('SELECT id, user_id, class, note, type, date, grade FROM grades WHERE class = ?')) {
+        $stmt->bind_param('s', $id);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        foreach($result as $row) {
+            array_push($grades, $row);
+        }
+        if($user_id !== $_SESSION["id"]){
+            $name = "";
+            $user_id = "";
+            $id = "";
+            $class = "";
+            $note = "";
+            $date = "";
+            $grade = "";
+            exit("ERROR2");
+        }
+        $stmt->close();
+    } else {
+        exit("ERROR1");
     }
 ?>
 
@@ -75,20 +100,51 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1 - 2</td>
-                    <td>11.03.2022</td>
-                    <td>Klassenarbeit</td>
-                    <td>KA 1</td>
-                    <td><button>BEARBEITEN</button></td>
-                </tr>
-                <tr>
-                    <td>3-</td>
-                    <td>11.03.2022</td>
-                    <td>Mündlich</td>
-                    <td>KA 1</td>
-                    <td><button>BEARBEITEN</button></td>
-                </tr>
+                <?php 
+                    foreach ($grades as $grade_entry) {
+                        $grade_split = (explode(".",$grade_entry["grade"]));
+                        $grade = "";
+                        // Grade to text calc
+                        if (sizeof($grade_split) == 2) {
+                            switch ($grade_split[1]) {
+                                case "25":
+                                    $grade = $grade_split[0]. "-";
+                                    break;
+                                case "5":
+                                    $grade = $grade_split[0] . "-" . (int)$grade_split[0] + 1;
+                                    break;
+                                case "75":
+                                    $grade = (int)$grade_split[0] + 1 . "+";
+                                    break;
+                            }
+                        } else {
+                            $grade = $grade_split[0];
+                        }
+                        // Date to text calc
+                        $date_split = explode("-",$grade_entry["date"]);
+                        $date = $date_split[2] . "." . $date_split[1] . "." . $date_split[0];
+                        // Type to text
+                        $type = "";
+                        switch ($grade_entry["type"]) {
+                            case 'K':
+                                $type = "Klassenarbeit";
+                                break;
+                            case 'M':
+                                $type = "Mündlich";
+                                break;
+                            case 'S':
+                                $type = "Sonstiges";
+                                break;
+                        }
+                        // Paste table entry
+                        $table_entry = "<tr><td>".$grade;
+                        $table_entry .= "</td><td>". $date;
+                        $table_entry .= "</td><td>". $type;
+                        $table_entry .= "</td><td>". $grade_entry["note"];
+                        $table_entry .= "</td><td><button onclick='editGrade(".$grade_entry["id"].")'>BEARBEITEN</button></td></tr>";
+                        echo $table_entry;
+                    }
+                ?>
                 <tr>
                     <td id="average-grade">2 - 3</td>
                     <td></td>
