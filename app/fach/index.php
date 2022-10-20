@@ -148,7 +148,29 @@
                 <tr>
                     <td id="average-grade">2 - 3</td>
                     <td></td>
-                    <td>4 Klassenarbeit | 2 Mündlich | 2 Sonstige</td>
+
+                    <?php 
+                        // Get number of types
+                        $num_type_K = 0;
+                        $num_type_M = 0;
+                        $num_type_S = 0;
+                        foreach ($grades as $grade_entry) {
+                            $grade_type_calc = $grade_entry["type"];
+                            switch ($grade_type_calc) {
+                                case 'K':
+                                    $num_type_K = $num_type_K + 1;
+                                    break;
+                                case 'M':
+                                    $num_type_M = $num_type_M + 1;
+                                    break;
+                                case 'S':
+                                    $num_type_S = $num_type_S + 1;
+                                    break;
+                            }
+                        }
+                        echo "<td>".$num_type_K." Klassenarbeit | ".$num_type_M." Mündlich | ".$num_type_S." Sonstige</td>";
+                    ?>
+                    
                     <td></td>
                     <td></td>
                 </tr>
