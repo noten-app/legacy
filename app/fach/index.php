@@ -146,7 +146,7 @@
                     }
                 ?>
                 <tr>
-                    <td id="average-grade">2 - 3</td>
+                    <td id="average-grade"></td>
                     <td></td>
 
                     <?php 
