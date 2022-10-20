@@ -1,7 +1,7 @@
 {
     "name": "NotenApp",
     "short_name": "NotenApp",
-    "start_url": "/app/app.html",
+    "start_url": "/app/app.php",
     "display": "standalone",
     "icons": [{
         "src": "/src/img/logo.png",
