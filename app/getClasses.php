@@ -13,10 +13,10 @@
 
     // Get all apps
     $applist = array();
-    $query=$con->query("SELECT name, color, id, last_used FROM classes WHERE user_id = \"".$_SESSION['id']."\"");
+    $query=$con->query("SELECT name, color, id, last_used, average FROM classes WHERE user_id = \"".$_SESSION['id']."\"");
     if($query){
         while($row = mysqli_fetch_array($query)){
-            array_push($applist, json_encode(array("class_name" => $row["name"], "class_color" => $row["color"], "class_id" => $row["id"], "class_last_use" => $row["last_used"])));
+            array_push($applist, json_encode(array("class_name" => $row["name"], "class_color" => $row["color"], "class_id" => $row["id"], "class_last_use" => $row["last_used"], "average" => $row["average"])));
         }
     }
 

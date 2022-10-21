@@ -61,7 +61,11 @@ $.ajax({
             if (element_parsed.class_grade) {
                 fach_info.innerText = "Note: " + element_parsed.class_grade;
             } else {
-                fach_info.innerText = "Note: ?";
+                if (element_parsed.average != 0) {
+                    fach_info.innerText = "Durchschnitt: " + element_parsed.average;
+                } else {
+                    fach_info.innerText = "Noch keine Noten";
+                }
             }
             fach_kachel.appendChild(fach_info);
 
