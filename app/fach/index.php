@@ -18,11 +18,11 @@
 
     // Get class
     $id = $_GET["id"];
-    if ($stmt = $con->prepare('SELECT name, color, user_id, id, last_used FROM classes WHERE id = ?')) {
+    if ($stmt = $con->prepare('SELECT name, color, user_id, id, last_used, grade_k, grade_m, grade_s FROM classes WHERE id = ?')) {
         $stmt->bind_param('s', $id);
         $stmt->execute();
         $stmt->store_result();
-        $stmt->bind_result($name, $color, $user_id, $id, $last_used);
+        $stmt->bind_result($name, $color, $user_id, $id, $last_used, $grade_k, $grade_m, $grade_s);
         $stmt->fetch();
         if($user_id !== $_SESSION["id"]){
             $name = "";
@@ -146,28 +146,38 @@
                     }
                 ?>
                 <tr>
-                    <td id="average-grade"></td>
-                    <td></td>
-
                     <?php 
-                        // Get number of types
+                        // Get number of types AND Get averages
                         $num_type_K = 0;
                         $num_type_M = 0;
                         $num_type_S = 0;
+                        $grade_sum = 0;
+                        $grade_divider = 0;
                         foreach ($grades as $grade_entry) {
                             $grade_type_calc = $grade_entry["type"];
+                            $grade = $grade_entry["grade"];
                             switch ($grade_type_calc) {
                                 case 'K':
                                     $num_type_K = $num_type_K + 1;
+                                    $grade_sum += $grade * $grade_k;
+                                    $grade_divider += $grade_k;
                                     break;
                                 case 'M':
                                     $num_type_M = $num_type_M + 1;
+                                    $grade_sum += $grade * $grade_k;
+                                    $grade_divider += $grade_k;
                                     break;
                                 case 'S':
                                     $num_type_S = $num_type_S + 1;
+                                    $grade_sum += $grade * $grade_s;
+                                    $grade_divider += $grade_s;
                                     break;
                             }
                         }
+                        $grade_average = $grade_sum / $grade_divider;
+                        $grade_average = round($grade_average,3);
+                        echo '<td id="average-grade">'.$grade_average.'</td>';
+                        echo '<td></td>';
                         echo "<td>".$num_type_K." Klassenarbeit | ".$num_type_M." Mündlich | ".$num_type_S." Sonstige</td>";
                     ?>
                     
