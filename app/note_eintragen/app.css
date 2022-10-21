@@ -1,0 +1,163 @@
+/* Import the font "Dosis" that's used */
+
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@800&display=swap');
+
+/* Theme switch */
+
+#themeToggleButton {
+    color: var(--font-color);
+    background: var(--color-primary);
+    padding: 2vh 2vw;
+    border-radius: 1vh;
+}
+
+#themeButton {
+    position: fixed;
+    top: 2vh;
+    right: 2vh;
+}
+
+
+/* text */
+
+span {
+    text-align: center;
+    margin: auto;
+    cursor: pointer;
+}
+
+
+/* everything on the page */
+
+* {
+    box-sizing: border-box;
+    font-size: 2.3vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: Dosis;
+}
+
+body,
+html {
+    background-color: #282C36;
+    transition: 1s;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    margin: 0;
+    font-size: 100%;
+}
+
+#topleiste {
+    min-height: 7vh;
+    max-height: 10vh;
+    width: 100%;
+    top: 0;
+    color: #ffffff;
+    display: grid;
+    grid-template-columns: min-content auto 7%;
+    grid-template-rows: auto;
+    gap: 0px 0px;
+    grid-template-areas: "logo name plus";
+    transition: 0s !important;
+}
+
+#topleiste * {
+    transition: 0s !important;
+}
+
+#topleiste div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2vh;
+    font-size: 3vh;
+}
+
+.logo {
+    grid-area: logo;
+    background-color: #424242;
+    cursor: pointer;
+}
+
+.logo i {
+    margin: 0 5vh;
+    font-size: 3vh;
+}
+
+.name {
+    grid-area: name;
+    background-color: #962b46;
+    border-bottom-right-radius: 5vh;
+}
+
+.plus {
+    grid-area: plus;
+    visibility: hidden;
+}
+
+.plus i {
+    font-size: 5vh;
+}
+
+
+/* 
+
+*/
+
+.mainbody {
+    width: 100vw;
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#container {
+    background-color: #383C46;
+    padding: 1rem 2.5rem 1rem 1rem;
+    border-radius: 2rem;
+    color: #ffffff;
+}
+
+#container>div {
+    background-color: #282C36;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+}
+
+.grade_type_title {
+    font-size: 1.6rem;
+    padding-bottom: 0.5rem;
+}
+
+#type_buttons button {
+    padding: 0.5rem;
+    background-color: #424242;
+    color: #ffffff;
+    border-radius: 0.5rem;
+    border: 0;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+#grade_buttons button {
+    padding: 0.5rem;
+    background-color: #424242;
+    color: #ffffff;
+    border-radius: 0.5rem;
+    border: 0;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+#notiz input {
+    width: 100%;
+    background-color: #848484;
+    border: 0;
+    color: #ffffff;
+    padding: 0.5rem;
+    border-radius: 1rem;
+}
