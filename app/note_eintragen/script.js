@@ -17,6 +17,7 @@ function chooseType(lmnt) {
             break;
     }
     lmnt.style.backgroundColor = "#2b4696"
+    checkFinishedState();
 }
 
 // 
@@ -34,4 +35,11 @@ function chooseGrade(lmnt) {
     grade_calc = grade_calc.substring(0, 1) + "." + grade_calc.substring(1, 3);
     grade = grade_calc;
     lmnt.style.backgroundColor = "#2b4696"
+    checkFinishedState();
+}
+
+function checkFinishedState() {
+    if (grade && type) {
+        document.getElementById("grade_send_button").disabled = false;
+    }
 }

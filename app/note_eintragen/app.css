@@ -116,7 +116,7 @@ html {
 
 #container {
     background-color: #383C46;
-    padding: 1rem 2.5rem 1rem 1rem;
+    padding: 1rem 1.5rem 1rem 1rem;
     border-radius: 2rem;
     color: #ffffff;
 }
@@ -160,4 +160,19 @@ html {
     color: #ffffff;
     padding: 0.5rem;
     border-radius: 1rem;
+}
+
+#grade_send_button {
+    background-color: #2b4696;
+    padding: 0.5rem;
+    color: #ffffff;
+    border-radius: 0.5rem;
+    border: 0;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 100%;
+}
+
+#grade_send_button:disabled {
+    background-color: #424242;
 }

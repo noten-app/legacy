@@ -102,6 +102,7 @@
                     <div class="notiz_titel title">Notiz</div>
                     <input type="text" id="" maxlength="64" placeholder="Ich bin eine Notiz"></textarea>
                 </div>
+                <button onclick="sendGrade()" id="grade_send_button" disabled>Absenden</button>
             </div>
         </div>
     </div>
