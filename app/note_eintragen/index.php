@@ -100,7 +100,7 @@
                 </div>
                 <div id="notiz">
                     <div class="notiz_titel title">Notiz</div>
-                    <input type="text" id="" maxlength="64" placeholder="Ich bin eine Notiz"></textarea>
+                    <input type="text" id="notiz_input" maxlength="64" placeholder="Ich bin eine Notiz"></input>
                 </div>
                 <button onclick="sendGrade()" id="grade_send_button" disabled>Absenden</button>
             </div>

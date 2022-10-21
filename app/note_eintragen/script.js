@@ -43,3 +43,25 @@ function checkFinishedState() {
         document.getElementById("grade_send_button").disabled = false;
     }
 }
+
+// 
+// 
+// 
+
+function sendGrade() {
+    $.ajax({
+        url: './setGrade.php',
+        type: 'POST',
+        data: {
+            class: location.href.split("?class=")[1].split("&")[0],
+            grade: grade,
+            type: type,
+            note: document.getElementById("notiz_input").value
+        },
+        success: function(data) {
+            if (data == "SUCCESS") {
+                location.assign("../fach/?id=" + location.href.split("?class=")[1].split("&")[0]);
+            }
+        }
+    });
+}
