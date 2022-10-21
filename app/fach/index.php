@@ -174,7 +174,11 @@
                                     break;
                             }
                         }
-                        $grade_average = $grade_sum / $grade_divider;
+                        if($grade_sum == 0 || $grade_divider == 0){
+                            $grade_average = "?";
+                        } else {
+                            $grade_average = $grade_sum / $grade_divider;
+                        }
                         $grade_average = round($grade_average,3);
                         echo '<td id="average-grade">'.$grade_average.'</td>';
                         echo '<td></td>';
