@@ -68,7 +68,7 @@ html {
     transition: 0s !important;
 }
 
-#topleiste div {
+#topleiste>div {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -91,6 +91,16 @@ html {
     grid-area: name;
     background-color: #962b46;
     border-bottom-right-radius: 5vh;
+    cursor: pointer;
+}
+
+.name>div {
+    margin-left: 2rem;
+}
+
+.name>div>i {
+    font-size: 2rem;
+    filter: opacity(0.5);
 }
 
 .plus {
