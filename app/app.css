@@ -95,6 +95,7 @@ html {
 
 .plus {
     grid-area: plus;
+    cursor: pointer;
 }
 
 .plus i {
