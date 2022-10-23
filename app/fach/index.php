@@ -86,7 +86,7 @@
 <body>
     <nav class="topleiste" id="topleiste">
         <div class="logo" id="top_leiste_icon-name" onclick="location.assign('../app.php')"><i class="fa-solid fa-house"></i></div>
-        <div id="topleiste_name" class="name" style="background-color: #<?=$color?>; color: <?=$textcolor?>;"><?=$name?><div><i class="fa-solid fa-gear"></i></div></div>
+        <div id="topleiste_name" class="name" onclick="location.assign('../fach_bearbeiten/?class=<?=$id?>');" style="background-color: #<?=$color?>; color: <?=$textcolor?>;"><?=$name?><div><i class="fa-solid fa-gear"></i></div></div>
         <div class="plus" onclick="location.assign('../note_eintragen/?class=<?=$id?>');"><i class="fa-solid fa-plus"></i></div>
     </nav>
     <div class="mainbody" id="mainbody">
