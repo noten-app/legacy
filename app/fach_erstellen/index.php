@@ -42,7 +42,7 @@
             <div id="container">
                 <div id="fach_titel">
                     <div class="color_title title">Fach-Titel</div>
-                    <input type="text" name="fach_titel" id="fach_titel_input" maxlength="16" minlength="1">
+                    <input type="text" name="fach_titel" id="fach_titel_input" maxlength="18" minlength="1">
                 </div>
                 <div id="grading_buttons">
                     <div class="grading_title title">Notengewichtung</div>
