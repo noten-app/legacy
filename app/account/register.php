@@ -60,7 +60,7 @@
         exit;
     } 
     // Conect to database
-    $con = mysqli_connect($db_host, $db_user, $db_pass, 'notenapp');
+    $con = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
     if (mysqli_connect_errno()) {
         header("Location: .?c=98");
         exit;
