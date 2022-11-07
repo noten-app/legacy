@@ -69,3 +69,24 @@ function updateClass() {
         }
     });
 }
+
+function deleteClass() {
+    // Class ID
+    const class_id = document.getElementById("class_id").innerText;
+    console.log(class_id);
+    // Ajax
+    $.ajax({
+        url: './deleteClass.php',
+        type: 'POST',
+        data: {
+            class_id: class_id
+        },
+        success: function(data) {
+            if (data == "SUCCESS") {
+                location.assign("../app.php");
+            } else {
+                console.log(data);
+            }
+        }
+    });
+}
