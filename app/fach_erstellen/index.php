@@ -42,28 +42,28 @@
             <div id="container">
                 <div id="fach_titel">
                     <div class="color_title title">Fach-Titel</div>
-                    <input type="text" name="fach_titel" id="fach_titel_input" maxlength="18" minlength="1">
+                    <input type="text" name="fach_titel" id="fach_titel_input" maxlength="20" minlength="1" placeholder="Fachname">
                 </div>
                 <div id="grading_buttons">
                     <div class="grading_title title">Notengewichtung</div>
                     <div>
                         <h3>Klassenarbeiten / Schriftliche Noten</h3>
-                        <input type="number" id="tentacles" name="tentacles" min="0" max="100" value="50">
+                        <input type="number" id="grade_percentage_k" name="grade_percentage_k" min="0" max="100" value="50">
                     </div>
                     <div>
                         <h3>Mündliche Noten</h3>
-                        <input type="number" id="tentacles" name="tentacles" min="0" max="100" value="50">
+                        <input type="number" id="grade_percentage_m" name="grade_percentage_m" min="0" max="100" value="50">
                     </div>
                     <div>
                         <h3>Sonstige Noten</h3>
-                        <input type="number" id="tentacles" name="tentacles" min="0" max="100" value="0">
+                        <input type="number" id="grade_percentage_s" name="grade_percentage_s" min="0" max="100" value="0">
                     </div>
                 </div>
                 <div id="color_picker">
                     <div class="color_title title">Fach-Farbe</div>
                     <input type="color" name="color_picker" id="color_picker_input">
                 </div>
-                <button onclick="sendGrade()" id="grade_send_button" disabled>Absenden</button>
+                <button onclick="createClass()" id="grade_send_button">Absenden</button>
             </div>
         </div>
     </div>
