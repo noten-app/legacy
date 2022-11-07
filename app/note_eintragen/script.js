@@ -56,7 +56,8 @@ function sendGrade() {
             class: location.href.split("?class=")[1].split("&")[0],
             grade: grade,
             type: type,
-            note: document.getElementById("notiz_input").value
+            note: document.getElementById("notiz_input").value,
+            date: document.getElementById("date_input").value
         },
         success: function(data) {
             if (data == "SUCCESS") {

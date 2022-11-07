@@ -7,14 +7,14 @@
 #themeToggleButton {
     color: var(--font-color);
     background: var(--color-primary);
-    padding: 2vh 2vw;
-    border-radius: 1vh;
+    padding: 2vmin;
+    border-radius: 1vmin;
 }
 
 #themeButton {
     position: fixed;
-    top: 2vh;
-    right: 2vh;
+    top: 2vmin;
+    right: 2vmin;
 }
 
 
@@ -31,7 +31,7 @@ span {
 
 * {
     box-sizing: border-box;
-    font-size: 2.3vh;
+    font-size: 2.3vmin;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-family: Dosis;
@@ -50,8 +50,8 @@ html {
 }
 
 #topleiste {
-    min-height: 7vh;
-    max-height: 10vh;
+    min-height: 7vmin;
+    max-height: 10vmin;
     width: 100%;
     top: 0;
     color: #ffffff;
@@ -71,8 +71,8 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 2vh;
-    font-size: 3vh;
+    padding: 2vmin;
+    font-size: 3vmin;
 }
 
 .logo {
@@ -82,14 +82,14 @@ html {
 }
 
 .logo i {
-    margin: 0 5vh;
-    font-size: 3vh;
+    margin: 0 5vmin;
+    font-size: 3vmin;
 }
 
 .name {
     grid-area: name;
     background-color: #962b46;
-    border-bottom-right-radius: 5vh;
+    border-bottom-right-radius: 5vmin;
 }
 
 .plus {
@@ -98,7 +98,7 @@ html {
 }
 
 .plus i {
-    font-size: 5vh;
+    font-size: 5vmin;
 }
 
 
@@ -108,32 +108,58 @@ html {
 
 .mainbody {
     width: 100vw;
-    min-height: 90vh;
+    min-height: 90vmin;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-#container {
-    background-color: #383C46;
-    padding: 1rem 1.5rem 1rem 1rem;
-    border-radius: 2rem;
+.note_eintragen-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 0.25fr;
+    gap: 1rem 1rem;
+    grid-auto-flow: row;
+    grid-template-areas: "notentyp notentyp datum" "note note datum" "notiz notiz notiz" "grade_send_button grade_send_button grade_send_button";
+    background-color: #383c46;
+    padding: 2rem;
     color: #ffffff;
+    border-radius: 3vmin;
 }
 
-#container>div {
+.notiz {
+    grid-area: notiz;
+}
+
+.datum {
+    grid-area: datum;
+}
+
+.note {
+    grid-area: note;
+}
+
+.notentyp {
+    grid-area: notentyp;
+}
+
+.grade_send_button {
+    grid-area: grade_send_button;
+}
+
+.note_eintragen-container>div {
     background-color: #282C36;
     padding: 1rem;
-    margin-bottom: 1rem;
     border-radius: 1rem;
 }
 
-.grade_type_title {
+.grade_type_title,
+.datum_titel {
     font-size: 1.6rem;
     padding-bottom: 0.5rem;
 }
 
-#type_buttons button {
+.notentyp button {
     padding: 0.5rem;
     background-color: #424242;
     color: #ffffff;
@@ -143,7 +169,7 @@ html {
     cursor: pointer;
 }
 
-#grade_buttons button {
+.note button {
     padding: 0.5rem;
     background-color: #424242;
     color: #ffffff;
@@ -153,13 +179,31 @@ html {
     cursor: pointer;
 }
 
-#notiz input {
+.notiz input,
+.datum input {
     width: 100%;
     background-color: #848484;
     border: 0;
     color: #ffffff;
     padding: 0.5rem;
     border-radius: 1rem;
+    cursor: pointer;
+}
+
+#date_input {
+    margin-bottom: 1vmin;
+    width: 100%;
+    text-align: center;
+}
+
+#date_reset {
+    width: 100%;
+    background-color: #962b46;
+    border: 0;
+    color: #ffffff;
+    padding: 0.5rem;
+    border-radius: 1rem;
+    cursor: pointer;
 }
 
 #grade_send_button {

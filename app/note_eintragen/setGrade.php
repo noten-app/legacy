@@ -21,6 +21,7 @@
     $grade = $_POST["grade"];
     $type = $_POST["type"];
     $note = $_POST["note"];
+    $date = $_POST["date"];
 
     // Get class
     if ($stmt = $con->prepare('SELECT user_id FROM classes WHERE id = ?')) {
@@ -50,7 +51,7 @@
     }
 
     // Generate date
-    $date = date('Y-m-d');
+    if(!$date) $date = date('Y-m-d');
 
     // Insert values
     if ($stmt = $con->prepare("INSERT INTO grades (user_id, class, type, note, date, grade) VALUES (?, ?, ?, ?, ?, ?)")) {

@@ -66,15 +66,15 @@
     </nav>
     <div class="mainbody" id="mainbody">
         <div>
-            <div id="container">
-                <div id="type_buttons">
+            <div class="note_eintragen-container">
+                <div class="notentyp">
                     <div class="grade_type_title title">Typ der Note</div>
                     <button onclick="chooseType(this)" class="type_button" id="type_button_schriftlich">Klassenarbeit / Schriftlich</button>
                     <button onclick="chooseType(this)" class="type_button" id="type_button_muendlich">Mündlich</button>
                     <button onclick="chooseType(this)" class="type_button" id="type_button_sonstiges">Sonstiges</button>
                 </div>
-                <div id="grade_buttons">
-                    <div class="grade_numer_title title">Note</div>
+                <div class="note">
+                    <div class="grade_nummer_title title">Note</div>
                     <button onclick="chooseGrade(this)" class="grade_button" id="grade_button_075">1+</button>
                     <button onclick="chooseGrade(this)" class="grade_button" id="grade_button_100">1</button>
                     <button onclick="chooseGrade(this)" class="grade_button" id="grade_button_125">1-</button>
@@ -98,11 +98,16 @@
                     <button onclick="chooseGrade(this)" class="grade_button" id="grade_button_575">6+</button>
                     <button onclick="chooseGrade(this)" class="grade_button" id="grade_button_600">6</button>
                 </div>
-                <div id="notiz">
+                <div class="datum">
+                    <div class="datum_titel title">Datum</div>
+                    <input type="date" name="date" id="date_input" value="<?=date('Y-m-d')?>" required>
+                    <button onclick='document.getElementById("date_input").value = "<?=date("Y-m-d")?>"' id="date_reset">Datum zurücksetzen</button>
+                </div>
+                <div class="notiz">
                     <div class="notiz_titel title">Notiz</div>
                     <input type="text" id="notiz_input" maxlength="64" placeholder="Ich bin eine Notiz"></input>
                 </div>
-                <button onclick="sendGrade()" id="grade_send_button" disabled>Absenden</button>
+                <button onclick="sendGrade()" id="grade_send_button" class="grade_send_button" disabled>Absenden</button>
             </div>
         </div>
     </div>
