@@ -1,0 +1,222 @@
+/* Import the font "Dosis" that's used */
+
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@800&display=swap');
+
+/* Theme switch */
+
+#themeToggleButton {
+    color: var(--font-color);
+    background: var(--color-primary);
+    padding: 2vmin;
+    border-radius: 1vmin;
+}
+
+#themeButton {
+    position: fixed;
+    top: 2vmin;
+    right: 2vmin;
+}
+
+
+/* text */
+
+span {
+    text-align: center;
+    margin: auto;
+    cursor: pointer;
+}
+
+
+/* everything on the page */
+
+* {
+    box-sizing: border-box;
+    font-size: 2.3vmin;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: Dosis;
+}
+
+body,
+html {
+    background-color: #282C36;
+    transition: 1s;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    margin: 0;
+    font-size: 100%;
+}
+
+#topleiste {
+    min-height: 7vmin;
+    max-height: 10vmin;
+    width: 100%;
+    top: 0;
+    color: #ffffff;
+    display: grid;
+    grid-template-columns: min-content auto 7%;
+    grid-template-rows: auto;
+    gap: 0px 0px;
+    grid-template-areas: "logo name plus";
+    transition: 0s !important;
+}
+
+#topleiste * {
+    transition: 0s !important;
+}
+
+#topleiste div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2vmin;
+    font-size: 3vmin;
+}
+
+.logo {
+    grid-area: logo;
+    background-color: #424242;
+    cursor: pointer;
+}
+
+.logo i {
+    margin: 0 5vmin;
+    font-size: 3vmin;
+}
+
+.name {
+    grid-area: name;
+    background-color: #962b46;
+    border-bottom-right-radius: 5vmin;
+}
+
+.plus {
+    grid-area: plus;
+    visibility: hidden;
+}
+
+.plus i {
+    font-size: 5vmin;
+}
+
+
+/* 
+
+*/
+
+.mainbody {
+    width: 100vw;
+    min-height: 90vmin;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.note_eintragen-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 0.25fr;
+    gap: 1rem 1rem;
+    grid-auto-flow: row;
+    grid-template-areas: "notentyp notentyp datum" "note note datum" "notiz notiz notiz" "grade_send_button grade_send_button grade_send_button";
+    background-color: #383c46;
+    padding: 2rem;
+    color: #ffffff;
+    border-radius: 3vmin;
+}
+
+.notiz {
+    grid-area: notiz;
+}
+
+.datum {
+    grid-area: datum;
+}
+
+.note {
+    grid-area: note;
+}
+
+.notentyp {
+    grid-area: notentyp;
+}
+
+.grade_send_button {
+    grid-area: grade_send_button;
+}
+
+.note_eintragen-container>div {
+    background-color: #282C36;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.grade_type_title,
+.datum_titel {
+    font-size: 1.6rem;
+    padding-bottom: 0.5rem;
+}
+
+.notentyp button {
+    padding: 0.5rem;
+    background-color: #424242;
+    color: #ffffff;
+    border-radius: 0.5rem;
+    border: 0;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.note button {
+    padding: 0.5rem;
+    background-color: #424242;
+    color: #ffffff;
+    border-radius: 0.5rem;
+    border: 0;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.notiz input,
+.datum input {
+    width: 100%;
+    background-color: #848484;
+    border: 0;
+    color: #ffffff;
+    padding: 0.5rem;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+
+#date_input {
+    margin-bottom: 1vmin;
+    width: 100%;
+    text-align: center;
+}
+
+#date_reset {
+    width: 100%;
+    background-color: #962b46;
+    border: 0;
+    color: #ffffff;
+    padding: 0.5rem;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+
+#grade_send_button {
+    background-color: #2b4696;
+    padding: 0.5rem;
+    color: #ffffff;
+    border-radius: 0.5rem;
+    border: 0;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 100%;
+}
+
+#grade_send_button:disabled {
+    background-color: #424242;
+}

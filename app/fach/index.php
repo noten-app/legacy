@@ -141,7 +141,7 @@
                         $table_entry .= "</td><td>". $date;
                         $table_entry .= "</td><td>". $type;
                         $table_entry .= "</td><td>". $grade_entry["note"];
-                        $table_entry .= "</td><td><button onclick='editGrade(".$grade_entry["id"].")'>BEARBEITEN</button></td></tr>";
+                        $table_entry .= "</td><td><button onclick='location.assign(\"../note_bearbeiten?grade_id=".$grade_entry["id"]."\")'>BEARBEITEN</button></td></tr>";
                         echo $table_entry;
                     }
                 ?>
