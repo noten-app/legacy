@@ -94,7 +94,10 @@
                     <div class="color_title title">Fach-Farbe</div>
                     <input type="color" name="color_picker" id="color_picker_input" value="<?=$color?>">
                 </div>
-                <button onclick="updateClass()" id="grade_send_button" style="background-color:<?=$color?>; color:<?=$textcolor?>">Speichern</button>
+                <div class="button_divider">
+                    <button onclick="deleteClass()" id="grade_delete_button" class="class_edit_button" style="background-color:#ff4444; color:<?=$textcolor?>">Fach löschen</button>
+                    <button onclick="updateClass()" id="grade_send_button" class="class_edit_button" style="background-color:<?=$color?>; color:<?=$textcolor?>">Speichern</button>
+                </div>
             </div>
         </div>
     </div>

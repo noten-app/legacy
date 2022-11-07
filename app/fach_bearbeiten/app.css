@@ -138,7 +138,11 @@ h3 {
     display: inline;
 }
 
-#grade_send_button {
+.button_divider {
+    display: flex;
+}
+
+.class_edit_button {
     background-color: #2b4696;
     padding: 0.5rem;
     color: #ffffff;
@@ -146,7 +150,12 @@ h3 {
     border: 0;
     font-size: 1rem;
     cursor: pointer;
-    width: 100%;
+    flex-grow: 1;
+    display: inline-block;
+}
+
+#grade_delete_button {
+    margin-right: 1rem;
 }
 
 #grade_send_button:disabled {
