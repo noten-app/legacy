@@ -36,7 +36,7 @@
     <nav class="topleiste" id="topleiste">
         <div class="logo" id="top_leiste_icon-name"> <img src="../src/img/logo.png" alt="NotenApp Logo" /> NotenApp</div>
         <div id="topleiste_name" class="name" onclick="location.assign('./account/logout.php')"><?=$_SESSION['displayname']?></div>
-        <div class="plus" onclick="location.assign('./fach_erstellen /');"><i class="fa-solid fa-plus"></i></div>
+        <div class="plus" onclick="location.assign('./fach_erstellen/');"><i class="fa-solid fa-plus"></i></div>
     </nav>
     <div class="mainbody" id="mainbody">
         <div class="fachliste" id="fachliste">
