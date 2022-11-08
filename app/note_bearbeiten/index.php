@@ -70,6 +70,7 @@
         <div class="plus"><i class="fa-solid fa-plus"></i></div>
     </nav>
     <p id="class_id" style="display:none"><?=$class_id?></p>
+    <p id="grade_id" style="display:none"><?=$grade_id?></p>
     <div class="mainbody" id="mainbody">
         <div>
             <div class="note_eintragen-container">

@@ -62,3 +62,25 @@ function sendGrade() {
         }
     });
 }
+
+function deleteGrade() {
+    // Class ID
+    const class_id = document.getElementById("class_id").innerText;
+    const grade_id = document.getElementById("grade_id").innerText;
+    // Ajax
+    $.ajax({
+        url: './deleteGrade.php',
+        type: 'POST',
+        data: {
+            class_id: class_id,
+            grade_id: grade_id
+        },
+        success: function(data) {
+            if (data == "SUCCESS") {
+                location.assign("../fach/?id=" + class_id);
+            } else {
+                console.log(data);
+            }
+        }
+    });
+}
