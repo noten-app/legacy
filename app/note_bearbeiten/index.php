@@ -110,7 +110,9 @@
                 </div>
                 <?php 
                     $grade = strval($grade);
-                    while(strlen($grade) < 3){
+                    if(strlen($grade) == 1){
+                        $grade .= "00";
+                    } else if(strlen($grade) == 3){
                         $grade .= "0";
                     }
                     echo "<script>chooseGrade(document.getElementById('grade_button_".str_replace(".","",$grade)."'));</script>";
