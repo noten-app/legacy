@@ -24,8 +24,12 @@
     }
     $class_id = $_POST["class_id"];
 
-    // Update DB
+    // Update DBs
     if($stmt = $con->prepare("DELETE FROM classes WHERE id = ? AND user_id = ?")){
+        $stmt->bind_param("is", $class_id, $_SESSION["id"]);
+        $stmt->execute();
+    }
+    if($stmt = $con->prepare("DELETE FROM grades WHERE class = ? AND user_id = ?")){
         $stmt->bind_param("is", $class_id, $_SESSION["id"]);
         $stmt->execute();
     }
