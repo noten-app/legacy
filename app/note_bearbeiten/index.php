@@ -123,7 +123,10 @@
                     <div class="notiz_titel title">Notiz</div>
                     <input type="text" id="notiz_input" maxlength="64" placeholder="Ich bin eine Notiz" value="<?=$note?>"></input>
                 </div>
-                <button onclick="sendGrade()" id="grade_send_button" class="grade_send_button">Note bearbeiten</button>
+                <div class="button_divider">
+                    <button onclick="deleteGrade()" id="grade_delete_button" class="grade_delete_button grade_edit_button">Note löschen</button>
+                    <button onclick="sendGrade()" id="grade_send_button" class="grade_send_button grade_edit_button">Note speichern</button>
+                </div>
             </div>
         </div>
     </div>
