@@ -151,6 +151,17 @@
                 <tr>
                     <?php 
                         // Get number of types AND Get averages
+                        $num_type_t = 0;
+                        $num_t_grades_sum = 0;
+                        foreach ($grades as $grade_entry) {
+                            $grade_type_calc = $grade_entry["type"];
+                            $grade = $grade_entry["grade"];
+                            if ($grade_type_calc == "T") {
+                                $num_type_t++;
+                                $num_t_grades_sum += $grade;
+                            }
+                        }
+                        $grade_t = $num_t_grades_sum / $num_type_t;
                         $num_type_K = 0;
                         $num_type_M = 0;
                         $num_type_S = 0;
@@ -177,6 +188,10 @@
                                     break;
                             }
                         }
+                        // Test grades
+                        $grade_sum += $grade_t * $grade_k;
+                        $grade_divider += $grade_k;
+                        // Grade calculation
                         if($grade_sum == 0 || $grade_divider == 0){
                             $grade_average = "?";
                         } else {
