@@ -15,6 +15,9 @@ function chooseType(lmnt) {
         case "type_button_sonstiges":
             type = "S";
             break;
+        case "type_button_test":
+            type = "T";
+            break;
     }
     lmnt.style.backgroundColor = "#2b4696"
     checkFinishedState();

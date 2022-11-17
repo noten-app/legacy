@@ -132,6 +132,9 @@
                             case 'M':
                                 $type = "Mündlich";
                                 break;
+                            case 'T':
+                                $type = "Test";
+                                break;
                             case 'S':
                                 $type = "Sonstiges";
                                 break;
@@ -148,6 +151,17 @@
                 <tr>
                     <?php 
                         // Get number of types AND Get averages
+                        $num_type_t = 0;
+                        $num_t_grades_sum = 0;
+                        foreach ($grades as $grade_entry) {
+                            $grade_type_calc = $grade_entry["type"];
+                            $grade = $grade_entry["grade"];
+                            if ($grade_type_calc == "T") {
+                                $num_type_t++;
+                                $num_t_grades_sum += $grade;
+                            }
+                        }
+                        $grade_t = $num_t_grades_sum / $num_type_t;
                         $num_type_K = 0;
                         $num_type_M = 0;
                         $num_type_S = 0;
@@ -174,6 +188,10 @@
                                     break;
                             }
                         }
+                        // Test grades
+                        $grade_sum += $grade_t * $grade_k;
+                        $grade_divider += $grade_k;
+                        // Grade calculation
                         if($grade_sum == 0 || $grade_divider == 0){
                             $grade_average = "?";
                         } else {
@@ -182,7 +200,7 @@
                         }
                         echo '<td id="average-grade">'.$grade_average.'</td>';
                         echo '<td></td>';
-                        echo "<td>".$num_type_K." Klassenarbeit | ".$num_type_M." Mündlich | ".$num_type_S." Sonstige</td>";
+                        echo "<td>".$num_type_K." Klassenarbeit | ".$num_type_M." Mündlich | ".$num_type_t." Test | ".$num_type_S." Sonstige</td>";
 
                         if ($stmt = $con->prepare("UPDATE classes SET average = ? WHERE id = ?; ")) {
                             $stmt->bind_param('si', $grade_average, $id);
