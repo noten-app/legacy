@@ -200,7 +200,7 @@
                         }
                         echo '<td id="average-grade">'.$grade_average.'</td>';
                         echo '<td></td>';
-                        echo "<td>".$num_type_K." Klassenarbeit | ".$num_type_M." Mündlich | ".$num_type_S." Sonstige</td>";
+                        echo "<td>".$num_type_K." Klassenarbeit | ".$num_type_M." Mündlich | ".$num_type_t." Test | ".$num_type_S." Sonstige</td>";
 
                         if ($stmt = $con->prepare("UPDATE classes SET average = ? WHERE id = ?; ")) {
                             $stmt->bind_param('si', $grade_average, $id);
