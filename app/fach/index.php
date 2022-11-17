@@ -132,6 +132,9 @@
                             case 'M':
                                 $type = "Mündlich";
                                 break;
+                            case 'T':
+                                $type = "Test";
+                                break;
                             case 'S':
                                 $type = "Sonstiges";
                                 break;
