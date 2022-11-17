@@ -71,6 +71,7 @@
                     <div class="grade_type_title title">Typ der Note</div>
                     <button onclick="chooseType(this)" class="type_button" id="type_button_schriftlich">Klassenarbeit / Schriftlich</button>
                     <button onclick="chooseType(this)" class="type_button" id="type_button_muendlich">Mündlich</button>
+                    <button onclick="chooseType(this)" class="type_button" id="type_button_test">Test</button>
                     <button onclick="chooseType(this)" class="type_button" id="type_button_sonstiges">Sonstiges</button>
                 </div>
                 <div class="note">

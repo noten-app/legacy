@@ -43,7 +43,7 @@
     if($grade < 0.75 || $grade > 6){
         exit("Grade not expected");
     }
-    if(!($type == "K" || $type == "M" || $type == "S")){
+    if(!($type == "K" || $type == "M" || $type == "S" || $type == "T")){
         exit("Type \"".$type."\" not expected");
     }
     if(strlen($note) > 64){
