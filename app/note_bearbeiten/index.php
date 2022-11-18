@@ -62,7 +62,7 @@
 </head>
 
 <body>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="../../src/js/jquery/jquery-3.6.1.min.js"></script>
     <script src="script.js"></script>
     <nav class="topleiste" id="topleiste">
         <div class="logo" id="top_leiste_icon-name" onclick="location.assign('../fach/?id=<?=$class_id?>')"><i class="fa-solid fa-circle-left"></i></div>
