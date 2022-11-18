@@ -55,7 +55,7 @@
     // Check if password is valid
     // Length: 8-255
     // Contains at least one number, at least one uppercase, at least one lowercase letter and at least one special character
-    if (!preg_match("/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,255}$/", $password)) {
+    if (!preg_match("/^[a-zA-Z0-9!@#$%^&*()_+\-=\[\]{};':\"\\|,.<>\/?].{8,225}$/", $password)) {
         header("Location: .?c=04");
         exit;
     } 
