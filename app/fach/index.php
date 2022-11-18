@@ -153,6 +153,7 @@
                         // Get number of types AND Get averages
                         $num_type_t = 0;
                         $num_t_grades_sum = 0;
+                        $grade_t = 0;
                         foreach ($grades as $grade_entry) {
                             $grade_type_calc = $grade_entry["type"];
                             $grade = $grade_entry["grade"];
@@ -161,7 +162,7 @@
                                 $num_t_grades_sum += $grade;
                             }
                         }
-                        $grade_t = $num_t_grades_sum / $num_type_t;
+                        if(!($num_t_grades_sum == 0 || $num_type_t)) $grade_t = $num_t_grades_sum / $num_type_t;
                         $num_type_K = 0;
                         $num_type_M = 0;
                         $num_type_S = 0;
