@@ -79,7 +79,8 @@
     <link rel="stylesheet" href="app.css">
     <link rel="icon" type="image/x-icon" href="../../src/img/favicon.ico" />
     <link rel="apple-touch-icon" href="../../src/img/favicon.ico" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.2.0/css/all.css">
+    <link rel="stylesheet" href="../../src/fontawesome/css/fontawesome.min.css">
+    <link rel="stylesheet" href="../../src/fontawesome/css/solid.min.css">
     <link rel="manifest" href="../../manifest.json">
 </head>
 
@@ -153,6 +154,7 @@
                         // Get number of types AND Get averages
                         $num_type_t = 0;
                         $num_t_grades_sum = 0;
+                        $grade_t = 0;
                         foreach ($grades as $grade_entry) {
                             $grade_type_calc = $grade_entry["type"];
                             $grade = $grade_entry["grade"];
@@ -161,7 +163,7 @@
                                 $num_t_grades_sum += $grade;
                             }
                         }
-                        $grade_t = $num_t_grades_sum / $num_type_t;
+                        if(!($num_t_grades_sum == 0 || $num_type_t)) $grade_t = $num_t_grades_sum / $num_type_t;
                         $num_type_K = 0;
                         $num_type_M = 0;
                         $num_type_S = 0;
@@ -218,7 +220,7 @@
             </tbody>
         </table>
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="../../src/js/jquery/jquery-3.6.1.min.js"></script>
 </body>
 
 </html>
