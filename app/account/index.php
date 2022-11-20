@@ -55,6 +55,5 @@
             </div>
         </div>
         <script src="script.js"></script>
-        <script src="../../src/js/statusbox/statusbox.js"></script>
     </body>
 </html>
