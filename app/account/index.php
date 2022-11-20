@@ -55,6 +55,6 @@
             </div>
         </div>
         <script src="script.js"></script>
-        <script src="https://cdn.jsdelivr.net/gh/cuzimbisonratte/status_box@v1.0.0/statusbox.js"></script>
+        <script src="../../src/js/statusbox/statusbox.js"></script>
     </body>
 </html>
