@@ -31,6 +31,8 @@ body {
     grid-template-rows: auto min-content;
     gap: 0px 0px;
     grid-template-areas: "main_container" "navbar";
+    color: var(--text-color);
+    font-family: "Inter";
 }
 
 .navbar {

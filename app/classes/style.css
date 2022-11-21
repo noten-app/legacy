@@ -1,0 +1,64 @@
+.main_container {
+    display: grid;
+    grid-template-columns: 30vmin 1fr 1fr 1.5fr;
+    grid-template-rows: 1fr 3fr 5vmin;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas: "class_list class_info class_info homework" "class_list grade_list grade_list homework" "class_list-plus grade_list-plus grade_list-show_more homework_plus";
+}
+
+.homework {
+    grid-area: homework;
+}
+
+.homework_plus {
+    grid-area: homework_plus;
+}
+
+.class_info {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas: "class_info-class_name class_info-class_name class_info-class_edit" "class_info-grading_info class_info-grading_info ." "class_info-grading_info class_info-grading_info .";
+    grid-area: class_info;
+}
+
+.class_info-class_name {
+    grid-area: class_info-class_name;
+}
+
+.class_info-class_edit {
+    grid-area: class_info-class_edit;
+}
+
+.class_info-grading_info {
+    grid-area: class_info-grading_info;
+}
+
+.class_list {
+    grid-area: class_list;
+    border-right: 1px solid var(--accent-color);
+}
+
+.class_list h1 {
+    margin: 1rem 0 0 1rem;
+}
+
+.class_list-plus {
+    grid-area: class_list-plus;
+    border-right: 1px solid var(--accent-color);
+}
+
+.grade_list-plus {
+    grid-area: grade_list-plus;
+}
+
+.grade_list-show_more {
+    grid-area: grade_list-show_more;
+}
+
+.grade_list {
+    grid-area: grade_list;
+}
