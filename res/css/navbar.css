@@ -1,0 +1,48 @@
+.navbar {
+    color: var(--accent-color);
+    background-color: var(--accent-background-color);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: space-between;
+    font-family: "Inter";
+    font-size: 1.5rem;
+}
+
+.navbar * {
+    transition: 0s;
+}
+
+.navbar i {
+    font-size: 80%;
+}
+
+.navbar_item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-auto-flow: row;
+    gap: 0px 0.5rem;
+    grid-template-areas: "navbar_icon navbar_icon_title";
+    width: min-content;
+    padding: 1rem;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    transition: background-color 0.125s;
+}
+
+.navbar_icon {
+    grid-area: navbar_icon;
+}
+
+.navbar_icon_title {
+    grid-area: navbar_icon_title;
+}
+
+.navbar_item:hover,
+.navbar_item:active,
+.navbar_item:focus {
+    background-color: black;
+}

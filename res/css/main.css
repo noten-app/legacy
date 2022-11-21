@@ -1,0 +1,42 @@
+:root {
+    --background-color: #282c36;
+    --accent-background-color: #181c26;
+    --text-color: #ffffff;
+    --accent-color: #eb660e;
+}
+
+html,
+body {
+    top: 0;
+    left: 0;
+    margin: 0;
+    font-size: 100%;
+    padding: 0;
+    background-color: var(--background-color);
+    transition: 0;
+    height: 100%;
+    width: 100%;
+}
+
+* {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: 0.5s;
+}
+
+body {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto min-content;
+    gap: 0px 0px;
+    grid-template-areas: "main_container" "navbar";
+}
+
+.navbar {
+    grid-area: navbar;
+}
+
+.main_container {
+    grid-area: main_container;
+}
