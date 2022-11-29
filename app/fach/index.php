@@ -192,7 +192,7 @@
                         }
                         // Test grades
                         $grade_sum += $grade_t * $grade_k;
-                        $grade_divider += $grade_k;
+                        if($grade_t != 0) $grade_divider += $grade_k;
                         // Grade calculation
                         if($grade_sum == 0 || $grade_divider == 0){
                             $grade_average = "?";
