@@ -45,6 +45,11 @@ nav * {
     width: fit-content;
 }
 
+.navbar_icon:hover {
+    transform: rotate3d(1, 1, 1, 12deg) scale(1.1);
+    transition: transform 0.25s;
+}
+
 .nav_top_buttons {
     grid-area: nav_top_buttons;
 }

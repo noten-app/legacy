@@ -18,6 +18,9 @@ var shortcuts = {
     },
     "alt+c": function() {
         window.location.href = "/classes/";
+    },
+    "alt+,": function() {
+        window.location.href = "/settings/";
     }
 }
 
