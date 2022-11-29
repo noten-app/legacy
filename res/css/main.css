@@ -1,8 +1,11 @@
 :root {
-    --background-color: #282c36;
-    --accent-background-color: #181c26;
     --text-color: #ffffff;
+    --text2-color: #cccccc;
+    --background-color: #282c36;
+    --background2-color: #181c26;
+    --background3-color: #0f111a;
     --accent-color: #eb660e;
+    --accent2-color: #f2a900;
 }
 
 html,
@@ -10,12 +13,15 @@ body {
     top: 0;
     left: 0;
     margin: 0;
-    font-size: 100%;
     padding: 0;
-    background-color: var(--background-color);
-    transition: 0;
-    height: 100%;
     width: 100%;
+    height: 100%;
+    transition: 0;
+    font-size: 100%;
+    font-family: "Inter";
+    scroll-behavior: smooth;
+    color: var(--text-color);
+    background-color: var(--background-color);
 }
 
 * {
@@ -24,20 +30,9 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
-body {
-    display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: auto min-content;
-    gap: 0px 0px;
-    grid-template-areas: "main_container" "navbar";
-    color: var(--text-color);
-    font-family: "Inter";
-}
-
-.navbar {
-    grid-area: navbar;
-}
-
-.main_container {
-    grid-area: main_container;
+main {
+    /* Navbar edit */
+    width: calc(100vw - 5rem);
+    margin-left: 5rem;
+    height: 100%;
 }
