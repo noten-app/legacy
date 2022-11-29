@@ -5,7 +5,7 @@ var shortcuts = {
         cycleTheme();
     },
     "alt+s": function() {
-        window.location.href = "/home/";
+        window.location.href = "/";
     },
     "alt+k": function() {
         window.location.href = "/calendar/";
