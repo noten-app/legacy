@@ -1,3 +1,12 @@
+<?php 
+
+    // Check login state
+    session_start();
+    require("./res/php/checkLogin.php");
+    if(!checkLogin()) header("Location: ./account/login");
+
+?>
+
 <!DOCTYPE html>
 <html lang="de">
 
