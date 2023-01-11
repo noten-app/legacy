@@ -5,11 +5,10 @@
     // Not logged in
     function checkLogin(){
         return !(
-            !isset($_SESSION['id']) ||
-            !isset($_SESSION['username']) ||
-            !isset($_SESSION['displayname']) ||
-            !isset($_SESSION['auth_type']) ||
-            !isset($_SESSION['email']) 
+            !isset($_SESSION['login_method']) ||
+            !isset($_SESSION['user_name']) ||
+            !isset($_SESSION['user_id']) ||
+            !isset($_SESSION['user_email']) 
         );
     }
 
