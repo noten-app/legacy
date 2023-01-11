@@ -5,6 +5,17 @@
     require("./res/php/checkLogin.php");
     if(!checkLogin()) header("Location: ./account/login");
 
+    // Get config
+    require("./config.php");
+
+    // DB Connection
+    $con = mysqli_connect(
+        config_db_host,
+        config_db_user,
+        config_db_password,
+        config_db_name
+    );
+    if(mysqli_connect_errno()) exit("Error with the Database");
 ?>
 
 <!DOCTYPE html>
@@ -41,7 +52,7 @@
                     <i class="fas fa-calendar-check"></i>
                 </div>
             </a>
-            <a href="#" class="nav-link">
+            <a href="/grades/" class="nav-link">
                 <div class="navbar_icon">
                     <i class="fa-solid fa-graduation-cap"></i>
                 </div>
