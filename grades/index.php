@@ -16,6 +16,26 @@
         config_db_name
     );
     if(mysqli_connect_errno()) exit("Error with the Database");
+
+    // Get all classes
+    $classlist = array();
+    if($stmt = $con->prepare("SELECT name, color, id, last_used FROM ".config_table_name_classes." WHERE user_id = ?")) {
+        $stmt->bind_param("s", $_SESSION["user_id"]);
+        $stmt->execute();
+        $stmt->bind_result($class_name, $class_color, $class_id, $class_last_used);
+        while ($stmt->fetch()) {
+            $classlist[] = array(
+                "name" => $class_name,
+                "color" => $class_color,
+                "id" => $class_id,
+                "last_used" => $class_last_used
+            );
+        }
+        $stmt->close();
+    }
+
+    // DB Con close
+    $con->close();
 ?>
 
 <!DOCTYPE html>
@@ -87,7 +107,20 @@
         </div>
     </nav>
     <main id="main">
-        <div class="grade_list"></div>
+        <div class="class_list">
+            <div class="classlist_title">
+                Classes
+            </div>
+            <div class="class_list_list">
+                <?php 
+                foreach ($classlist as $class) {
+                    echo '<div class="class_entry" onclick="location.assign(\'./?class='.$class["id"].'\')" style="border-color:#'.$class["color"].'">';
+                    echo '<div class="class_entry_name">'.$class["name"].'</div>';
+                    echo '</div>';
+                }
+                ?>
+            </div>
+        </div>
         <div class="grade_table"></div>
         <div class="grade_stats">
             <div class="grade_stats_cake">

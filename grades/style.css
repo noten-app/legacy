@@ -14,8 +14,52 @@ Clas list
 
 .class_list {
     grid-area: class_list;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: min-content auto;
+    gap: 0px 0px;
+    grid-template-areas: "classlist_title" "class_list_list";
+    padding: 0.5rem;
     border-radius: 1.5rem;
     background-color: var(--background2-color);
+    margin: 0.25rem 0.25rem 0.25rem 0.5rem;
+}
+
+.classlist_title {
+    grid-area: classlist_title;
+    font-size: 3rem;
+}
+
+.class_list_list {
+    grid-area: class_list_list;
+    overflow: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.class_entry {
+    font-size: 1.5rem;
+    width: calc(50% - 0.5rem);
+    background-color: var(--background-color);
+    height: 5rem;
+    margin: 0.25rem;
+    padding: 0.5rem;
+    border-radius: 1.5rem;
+    cursor: pointer;
+    border: 0px solid;
+    border-bottom: 2px solid;
+    transition: 0.5s background;
+    display: grid;
+}
+
+.class_entry:hover {
+    background-color: var(--background3-color);
+}
+
+.class_entry_name {
+    display: grid;
+    place-items: center;
 }
 
 
