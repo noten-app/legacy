@@ -1,0 +1,101 @@
+main {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 3fr 2fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas: "class_list grade_table" "class_list grade_stats";
+}
+
+
+/* 
+Clas list
+*/
+
+.class_list {
+    grid-area: class_list;
+    border-radius: 1.5rem;
+    background-color: var(--background2-color);
+}
+
+
+/* 
+Grade list
+*/
+
+.grade_table {
+    grid-area: grade_table;
+}
+
+
+/* 
+Grade stats
+*/
+
+.grade_stats {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 3fr 2fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas: "grade_plus grade_stats_cake grade_stats_average" "grade_more grade_stats_cake grade_stats_average";
+    grid-area: grade_stats;
+}
+
+.grade_stats_cake {
+    grid-area: grade_stats_cake;
+    background-color: var(--background2-color);
+    border-top-left-radius: 1.5rem;
+    border-bottom-left-radius: 1.5rem;
+    margin: 0.25rem 0 0.25rem 0.25rem;
+    display: grid;
+    place-items: center;
+}
+
+.cake_coming_soon {
+    text-align: center;
+    rotate: 25deg;
+    font-size: 2rem;
+}
+
+.grade_stats_average {
+    grid-area: grade_stats_average;
+    background-color: var(--background2-color);
+    border-top-right-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem;
+    margin: 0.25rem 0.25rem 0.25rem 0;
+    display: grid;
+    place-items: center;
+    font-size: 2.5rem;
+}
+
+.grade_plus {
+    grid-area: grade_plus;
+    padding: 0.25rem;
+}
+
+.grade_more {
+    grid-area: grade_more;
+    padding: 0.25rem;
+}
+
+.grade_stats_button {
+    width: 100%;
+    height: 100%;
+    border-radius: 1.5rem;
+    background-color: var(--background2-color);
+    display: grid;
+    place-items: center;
+    font-size: 3rem;
+    cursor: pointer;
+}
+
+.grade_stats_button:hover {
+    transition: 0.5s;
+    background-color: var(--background3-color);
+}
+
+.grade_stats_button:hover * {
+    transition: 0.5s;
+    transform: scale(1.25);
+}
