@@ -135,11 +135,11 @@ Grade stats
 }
 
 .grade_stats_button:hover {
-    transition: 0.5s;
+    transition: 0.25s;
     background-color: var(--background3-color);
 }
 
 .grade_stats_button:hover * {
-    transition: 0.5s;
-    transform: scale(1.25);
+    transition: 0.25s;
+    transform: scale(1.125);
 }
