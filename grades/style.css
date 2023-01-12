@@ -69,6 +69,42 @@ Grade list
 
 .grade_table {
     grid-area: grade_table;
+    border-radius: 1.5rem;
+    background-color: var(--background2-color);
+    margin: 0.25rem;
+    overflow: auto;
+}
+
+.grade_table * {
+    color: var(--text-color);
+}
+
+.grade_table table {
+    color: #ffffff;
+    border-radius: 1rem;
+    border-collapse: collapse;
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+}
+
+.grade_table thead {
+    background-color: var(--accent-color);
+    font-size: 1rem;
+    text-align: center;
+    height: 2rem;
+}
+
+.grade_table thead td {
+    padding: 0;
+}
+
+.grade_table button {
+    background-color: var(--accent-color);
+    cursor: pointer;
+    border: 0;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
 }
 
 

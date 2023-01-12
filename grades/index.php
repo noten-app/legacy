@@ -38,6 +38,24 @@
         if($class["id"] == $_GET["class"]) {
             if($class["average"] == 0) $class["average"] = "???";
             $current_class = $class;
+            
+            // Get all grades
+            $grades = array();
+            if($stmt = $con->prepare("SELECT type, grade, note, date, id FROM ".config_table_name_grades." WHERE class = ?")) {
+                $stmt->bind_param("s", $class["id"]);
+                $stmt->execute();
+                $stmt->bind_result($grade_type, $grade_grade, $grade_note, $grade_date, $grade_id);
+                while ($stmt->fetch()) {
+                    $grades[] = array(
+                        "type" => $grade_type,
+                        "grade" => $grade_grade,
+                        "note" => $grade_note,
+                        "date" => $grade_date,
+                        "id" => $grade_id
+                    );
+                }
+                $stmt->close();
+            }
         }
     } else {
         if(isset($classlist[0])) header("Location: ./?class=".$classlist[0]["id"]);
@@ -130,7 +148,31 @@
                 ?>
             </div>
         </div>
-        <div class="grade_table"></div>
+        <div class="grade_table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Note</th>
+                        <th>Datum</th>
+                        <th>Typ</th>
+                        <th>Notiz</th>
+                        <th>Bearbeiten</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                        foreach ($grades as $grade) {
+                            $table_entry = "<tr><td>".$grade["grade"];
+                            $table_entry .= "</td><td>". $grade["date"];
+                            $table_entry .= "</td><td>". $grade["type"];
+                            $table_entry .= "</td><td>". $grade["note"];
+                            $table_entry .= "</td><td><button onclick='location.assign(\"../note_bearbeiten?grade_id=".$grade["id"]."\")'>BEARBEITEN</button></td></tr>";
+                            echo $table_entry;
+                        }
+                    ?>
+                </tbody>
+            </table>
+        </div>
         <div class="grade_stats">
             <div class="grade_stats_cake">
                 <div class="cake_coming_soon">
