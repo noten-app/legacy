@@ -83,6 +83,27 @@
 </head>
 
 <body>
+    <div class="overlays" id="overlay_container">
+        <div class="overlay_add_grade" id="overlay_add_grade">
+            <h1>Füge eine Note hinzu</h1>
+            <hr>
+            <h3>Notentyp</h3>
+            <div class="grade_type-buttons">
+                <button>Klassenarbeit</button>
+                <button>Test</button>
+                <button>M&uuml;ndlich</button>
+                <button>Sonstiges</button>
+            </div>
+            <hr>
+            <h3>Note</h3>
+            <div class="grade-buttons">
+                <button>1</button>
+                <button>1-</button>
+                <button>1-2</button>
+            </div>
+            <hr>
+        </div>
+    </div>
     <nav>
         <div class="nav_top_buttons">
             <a href="/" class="nav-link">
@@ -182,7 +203,7 @@
             <div class="grade_stats_average">
                 &Oslash; <?=$current_class["average"]?>
             </div>
-            <div class="grade_plus">
+            <div class="grade_plus" onclick="showOverlay_addGrade();">
                 <div class="grade_plus_button grade_stats_button">
                     <i class="fa-solid fa-square-plus"></i>
                 </div>
@@ -194,6 +215,7 @@
             </div>
         </div>
     </main>
+    <script src="./overlays.js"></script>
     <script src="/res/js/themes/themes.js"></script>
     <script src="/res/js/shortcuts/shortcuts.js"></script>
 </body>

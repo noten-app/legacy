@@ -179,3 +179,53 @@ Grade stats
     transition: 0.25s;
     transform: scale(1.125);
 }
+
+
+/* 
+Overlays
+*/
+
+.overlays {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    overflow: auto;
+    z-index: -500;
+    background-color: #00000000;
+    transition: background 0.5s;
+}
+
+.overlays>div {
+    display: none;
+}
+
+
+/* Add Grade */
+
+.overlay_add_grade {
+    background-color: var(--background-color);
+    border-radius: 0.5rem;
+    min-width: 25rem;
+    text-align: center;
+}
+
+.grade_type-buttons button,
+.grade-buttons button {
+    width: calc(50% - 2rem);
+    border-radius: 0.5rem;
+    background-color: var(--background2-color);
+    height: 2rem;
+    margin: 0.25rem;
+    font-size: 1rem;
+    border: 0;
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+.grade-buttons button {
+    aspect-ratio: 1/1;
+    width: inherit;
+    margin: 0.125rem;
+}

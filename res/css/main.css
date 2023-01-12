@@ -18,8 +18,6 @@ body {
     height: 100%;
     transition: 0;
     font-size: 100%;
-    font-family: "Inter";
-    scroll-behavior: smooth;
     color: var(--text-color);
     background-color: var(--background-color);
 }
@@ -28,6 +26,8 @@ body {
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    font-family: "Inter";
+    scroll-behavior: smooth;
 }
 
 main {
