@@ -39,6 +39,8 @@
             if($class["average"] == 0) $class["average"] = "???";
             $current_class = $class;
         }
+    } else {
+        if(isset($classlist[0])) header("Location: ./?class=".$classlist[0]["id"]);
     }
 
     // DB Con close
