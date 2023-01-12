@@ -58,7 +58,7 @@
 <body>
     <nav>
         <div class="nav_top_buttons">
-            <a href="#" class="nav-link">
+            <a href="/" class="nav-link">
                 <div class="navbar_icon">
                     <i class="fas fa-home"></i>
                 </div>
