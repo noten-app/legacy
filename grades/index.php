@@ -19,19 +19,26 @@
 
     // Get all classes
     $classlist = array();
-    if($stmt = $con->prepare("SELECT name, color, id, last_used FROM ".config_table_name_classes." WHERE user_id = ?")) {
+    if($stmt = $con->prepare("SELECT name, color, id, last_used, average FROM ".config_table_name_classes." WHERE user_id = ?")) {
         $stmt->bind_param("s", $_SESSION["user_id"]);
         $stmt->execute();
-        $stmt->bind_result($class_name, $class_color, $class_id, $class_last_used);
+        $stmt->bind_result($class_name, $class_color, $class_id, $class_last_used, $class_grade_average);
         while ($stmt->fetch()) {
             $classlist[] = array(
                 "name" => $class_name,
                 "color" => $class_color,
                 "id" => $class_id,
-                "last_used" => $class_last_used
+                "last_used" => $class_last_used,
+                "average" => $class_grade_average
             );
         }
         $stmt->close();
+    }
+    if(isset($_GET["class"])) foreach ($classlist as $class) {
+        if($class["id"] == $_GET["class"]) {
+            if($class["average"] == 0) $class["average"] = "???";
+            $current_class = $class;
+        }
     }
 
     // DB Con close
@@ -129,7 +136,7 @@
                 </div>
             </div>
             <div class="grade_stats_average">
-                &Oslash; 4,22
+                &Oslash; <?=$current_class["average"]?>
             </div>
             <div class="grade_plus">
                 <div class="grade_plus_button grade_stats_button">
