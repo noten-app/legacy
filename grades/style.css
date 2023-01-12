@@ -53,6 +53,10 @@ Clas list
     display: grid;
 }
 
+.class_entry_active {
+    border: 2px solid;
+}
+
 .class_entry:hover {
     background-color: var(--background3-color);
 }
@@ -75,7 +79,8 @@ Grade list
     overflow: auto;
 }
 
-.grade_table * {
+.grade_table,
+td {
     color: var(--text-color);
 }
 
@@ -105,6 +110,11 @@ Grade list
     border: 0;
     border-radius: 0.5rem;
     padding: 0.5rem;
+}
+
+.table_nogrades {
+    font-size: 3rem;
+    color: var(--accent-color);
 }
 
 

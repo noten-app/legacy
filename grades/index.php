@@ -38,6 +38,11 @@
         if($class["id"] == $_GET["class"]) {
             if($class["average"] == 0) $class["average"] = "???";
             $current_class = $class;
+            if(hexdec(substr($class["color"],0,2))+hexdec(substr($class["color"],2,2))+hexdec(substr($class["color"],4,2))> 381){
+                $textcolor = "#000000";
+            } else {
+                $textcolor = "#fffff";
+            }
             
             // Get all grades
             $grades = array();
@@ -141,7 +146,9 @@
             <div class="class_list_list">
                 <?php 
                 foreach ($classlist as $class) {
-                    echo '<div class="class_entry" onclick="location.assign(\'./?class='.$class["id"].'\')" style="border-color:#'.$class["color"].'">';
+                    echo '<div class="class_entry';
+                    if(isset($current_class) && $current_class["id"] == $class["id"]) echo ' class_entry_active';
+                    echo '" onclick="location.assign(\'./?class='.$class["id"].'\')" style="border-color:#'.$class["color"].'">';
                     echo '<div class="class_entry_name">'.$class["name"].'</div>';
                     echo '</div>';
                 }
@@ -150,7 +157,7 @@
         </div>
         <div class="grade_table">
             <table>
-                <thead>
+                <thead style="background-color: #<?=$current_class["color"]?>;color: <?=$textcolor?>;">
                     <tr>
                         <th>Note</th>
                         <th>Datum</th>
@@ -168,6 +175,9 @@
                             $table_entry .= "</td><td>". $grade["note"];
                             $table_entry .= "</td><td><button onclick='location.assign(\"../note_bearbeiten?grade_id=".$grade["id"]."\")'>BEARBEITEN</button></td></tr>";
                             echo $table_entry;
+                        }
+                        if (count($grades) == 0) {
+                            echo "<tr><td class='table_nogrades' colspan='5'>Keine Noten vorhanden</td></tr>";
                         }
                     ?>
                 </tbody>
