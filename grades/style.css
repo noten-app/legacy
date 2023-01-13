@@ -235,7 +235,79 @@ Overlays
 }
 
 .grade-buttons button {
-    aspect-ratio: 1/1;
+    aspect-ratio: 1.5/1;
     width: inherit;
     margin: 0.125rem;
+}
+
+.grade-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    max-width: 500px;
+    justify-content: center;
+}
+
+.grade_note_date_field {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-template-areas: "grade_note-entry grade_date-entry";
+}
+
+.grade_note-entry {
+    grid-area: grade_note-entry;
+}
+
+.grade_date-entry {
+    grid-area: grade_date-entry;
+}
+
+#grade_note-entry_input {
+    max-width: 90%;
+    border: 0;
+    outline: 0;
+    padding: 1rem;
+    font-size: 1rem;
+    background-color: var(--background2-color);
+    color: var(--text-color);
+    border-radius: 0.5rem;
+}
+
+#grade_date-entry_input {
+    border: 0;
+    outline: 0;
+    padding: 1rem;
+    font-size: 1rem;
+    background-color: var(--background2-color);
+    color: var(--text-color);
+    border-radius: 0.5rem;
+}
+
+.grade_add_buttons {
+    width: 100%;
+    display: flex;
+    margin-top: 0.5rem;
+}
+
+.grade_add_buttons button {
+    flex-grow: 1;
+    border: 0;
+    padding: 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.grade_add_buttons-cancel {
+    background-color: #881111;
+    color: var(--text-color);
+    border-bottom-left-radius: 0.5rem;
+}
+
+.grade_add_buttons-save {
+    background-color: #118811;
+    color: var(--text-color);
+    border-bottom-right-radius: 0.5rem;
 }

@@ -102,11 +102,32 @@
             <hr>
             <h3>Note</h3>
             <div class="grade-buttons">
-                <button>1</button>
-                <button>1-</button>
-                <button>1-2</button>
+                <?php 
+                for ($i=1; $i < 6; $i=$i+0.25) {
+                    if(round($i)==$i) echo '<button>'.$i.'</button>';
+                    if(str_ends_with(strval($i),".25")) echo '<button>'.str_split(strval($i))[0].'-</button>';
+                    if(str_ends_with(strval($i),".5")) echo '<button>'.str_split(strval($i))[0].'-'.strval(intval(str_split(strval($i))[0])+1).'</button>';
+                    if(str_ends_with(strval($i),".75")) echo '<button>'.str_split(strval($i+1))[0].'+</button>';
+                }
+                echo '<button>'."6".'</button>';
+                ?>
             </div>
             <hr>
+            <div class="grade_note_date_field">
+                <div class="grade_note-entry">
+                    <h3>Notiz</h3>
+                    <input type="text" name="grade_note-entry_input" id="grade_note-entry_input" maxlength="30">
+                </div>
+                <hr>
+                <div class="grade_date-entry">
+                    <h3>Datum</h3>
+                    <input type="date" value="<?=date('Y-m-d')?>" name="grade_date-entry_input" id="grade_date-entry_input">
+                </div>
+            </div>
+            <div class="grade_add_buttons">
+                <button class="grade_add_buttons-cancel" onclick="hideOverlay_addGrade();">Abbrechen</button>
+                <button class="grade_add_buttons-save">Speichern</button>
+            </div>
         </div>
     </div>
     <nav>
