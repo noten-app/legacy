@@ -160,3 +160,20 @@ html {
     grid-area: fach_info;
     white-space: nowrap;
 }
+
+
+/* 
+
+Mobile
+
+*/
+
+@media screen and (max-width: 500px) {
+    .fach-kachel {
+        width: 75%;
+        grid-template-areas: "fach_name  fach_info" "fach_farbe fach_info";
+    }
+    .fach_farbe {
+        width: 50%;
+    }
+}
