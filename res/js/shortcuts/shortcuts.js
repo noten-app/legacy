@@ -13,8 +13,8 @@ var shortcuts = {
     "alt+h": function() {
         window.location.href = "/homework/";
     },
-    "alt+p": function() {
-        window.location.href = "/planner/";
+    "alt+g": function() {
+        window.location.href = "/grades/";
     },
     "alt+c": function() {
         window.location.href = "/classes/";
