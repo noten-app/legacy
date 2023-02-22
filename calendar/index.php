@@ -96,7 +96,12 @@
         </div>
     </nav>
     <main id="main">
-        <div class="calendar-actions"></div>
+        <div class="calendar-actions">
+            <p class="mintext-caledit">
+                You can edit Calendar entries by clicking on them!<br>
+                You can also create new entries by clicking on the calendar grid.
+            </p>
+        </div>
         <div class="calendar_list" id="calendar_list"></div>
         <div class="calendar_grid" id="calendar_grid"></div>
     </main>

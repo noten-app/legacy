@@ -25,3 +25,8 @@ main>div {
 .calendar-actions {
     grid-area: calendar-actions;
 }
+
+.mintext-caledit {
+    font-size: calc(33vw / 42);
+    text-align: center;
+}
