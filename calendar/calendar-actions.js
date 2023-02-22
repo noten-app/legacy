@@ -9,7 +9,9 @@ const cal_config = {
     dayMaxEvents: true,
     locale: "en",
     events: cal_events,
-    nowIndicator: true
+    nowIndicator: true,
+    selectable: true,
+    selectMirror: true
 };
 
 // Load calendars
@@ -25,6 +27,9 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         dateClick: function(info) {
             dateClick(list_calendar, info.dateStr);
+        },
+        select: function(info) {
+            dateRange(list_calendar, info);
         }
     });
     grid_calendar = new FullCalendar.Calendar(document.getElementById('calendar_grid'), {
@@ -35,6 +40,9 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         dateClick: function(info) {
             dateClick(grid_calendar, info.dateStr);
+        },
+        select: function(info) {
+            dateRange(grid_calendar, info);
         }
     });
     for (var key in cal_config) {
@@ -53,5 +61,10 @@ function calClick(calendar, event) {
 
 function dateClick(calendar, date) {
     alert('Date: ' + date);
+    alert('Cal: ' + calendar);
+}
+
+function dateRange(calendar, event) {
+    alert('Date: ' + event);
     alert('Cal: ' + calendar);
 }
