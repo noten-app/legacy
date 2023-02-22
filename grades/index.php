@@ -137,7 +137,7 @@
                     <i class="fas fa-home"></i>
                 </div>
             </a>
-            <a href="#" class="nav-link">
+            <a href="/calendar/" class="nav-link">
                 <div class="navbar_icon">
                     <i class="fas fa-calendar-alt"></i>
                 </div>

@@ -2,11 +2,11 @@
 
     // Check login state
     session_start();
-    require("./res/php/checkLogin.php");
-    if(!checkLogin()) header("Location: ./account/login");
+    require("../res/php/checkLogin.php");
+    if(!checkLogin()) header("Location: ../account/login");
 
     // Get config
-    require("./config.php");
+    require("../config.php");
 
     // DB Connection
     $con = mysqli_connect(
@@ -16,6 +16,14 @@
         config_db_name
     );
     if(mysqli_connect_errno()) exit("Error with the Database");
+
+    // Get calendar events
+    if($stmt = $con->prepare("SELECT * FROM calendar WHERE user_id = ?")) {
+        $stmt->bind_param("i", $_SESSION["user_id"]);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $cal_events = $result->fetch_all(MYSQLI_ASSOC);
+    }
 ?>
 
 <!DOCTYPE html>
@@ -32,6 +40,8 @@
     <link rel="stylesheet" href="/res/css/fonts.css">
     <link rel="stylesheet" href="/res/css/main.css">
     <link rel="stylesheet" href="/res/css/navbar.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./fullcalendar.css">
 </head>
 
 <body>
@@ -86,9 +96,30 @@
         </div>
     </nav>
     <main id="main">
+        <div class="calendar-actions"></div>
+        <div class="calendar_list" id="calendar_list"></div>
+        <div class="calendar_grid" id="calendar_grid"></div>
     </main>
     <script src="/res/js/themes/themes.js"></script>
     <script src="/res/js/shortcuts/shortcuts.js"></script>
+    <script src="/res/js/fullcalendar-6.1.4/dist/index.global.min.js"></script>
+    <script>
+        // Get calendar events
+        const cal_events = <?php 
+        echo "[";
+            foreach ($cal_events as $item) {
+                echo "{";
+                if(isset($item["title"])) echo "'title': '" . $item["title"] . "',";
+                if(isset($item["date"])) echo "'start': '" . $item["date"] . "',";
+                if(isset($item["entry_id"])) echo "'id': '" . $item["entry_id"] . "',";
+                if(isset($item["groupId"])) echo "'groupId': '" . $item["groupId"] . "'";
+                echo "}";
+                if($item != end($cal_events)) echo ",";
+            }
+        echo "]";
+        ?>
+    </script>
+    <script src="./calendar-actions.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,27 @@
+main {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas: "calendar-actions calendar_grid" "calendar_list calendar_grid";
+}
+
+main>div {
+    background-color: var(--background2-color);
+    border-radius: 1.5rem;
+    padding: 1rem;
+    margin: 0.25rem 0.25rem 0.25rem 0.5rem;
+}
+
+.calendar_grid {
+    grid-area: calendar_grid;
+}
+
+.calendar_list {
+    grid-area: calendar_list;
+}
+
+.calendar-actions {
+    grid-area: calendar-actions;
+}
