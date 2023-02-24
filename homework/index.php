@@ -2,11 +2,11 @@
 
     // Check login state
     session_start();
-    require("./res/php/checkLogin.php");
-    if(!checkLogin()) header("Location: ./account/login");
+    require("../res/php/checkLogin.php");
+    if(!checkLogin()) header("Location: ../account/login");
 
     // Get config
-    require("./config.php");
+    require("../config.php");
 
     // DB Connection
     $con = mysqli_connect(
@@ -16,6 +16,9 @@
         config_db_name
     );
     if(mysqli_connect_errno()) exit("Error with the Database");
+
+    // DB Con close
+    $con->close();
 ?>
 
 <!DOCTYPE html>
@@ -32,6 +35,7 @@
     <link rel="stylesheet" href="/res/css/fonts.css">
     <link rel="stylesheet" href="/res/css/main.css">
     <link rel="stylesheet" href="/res/css/navbar.css">
+    <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
